@@ -1,0 +1,56 @@
+<% layout('layouts/boilerplate') %>
+    <style>
+        #abcd {
+
+            margin-bottom: 50px;
+
+        }
+
+        .card {
+            border: 0px;
+            padding: 0px;
+            margin: 0px;
+            background-color: black;
+        }
+
+        .row {
+
+            background-color: black;
+            color: white;
+            border: 0px;
+            padding: 0px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+
+    <h1 id="abcd">All properties</h1>
+    <ul>
+        <% for(property of propertys){%>
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <img class="img-fluid" alt="" src="<%= property.images[0].url %>" </div>
+
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5>
+                                <%= property.title %>
+                            </h5>
+                            <p class="card-text">
+                                <%= property.description %>
+                            </p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <%= property.location %>
+                                </small>
+                            </p>
+                            <a href="/property/<%= property.id %>" class="btn btn-primary">view <%= property.title %>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+    </ul>

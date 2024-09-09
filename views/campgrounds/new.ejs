@@ -1,0 +1,53 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">Add New property</h1>
+        <div class="col-6 offset-3">
+
+            <form action="/property" method="post" novalidate class="validated-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">enter the city of property</label>
+                    <input class="form-control" id="title" type="text" name="property[title]" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <br>
+
+                <div class="mb-3">
+                    <label class="form-label" for="location">enter the state of property</label>
+                    <input class="form-control" id="location" type="text" name="property[location]" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+
+                <!-- <div class="mb-3">
+                    <label class="form-label" for="image">enter the image url</label>
+                    <input class="form-control" id="image" type="text" name="property[image]" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div> -->
+
+                <div class="mb-3">
+                    <label class="form-label" for="price">enter the price of property</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input id="price" name="property[price]" type="text" class="form-control" placeholder="0.00"
+                            aria-label="price" aria-describedby="price-label" required>
+                    </div>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label" for="description">enter the description of property</label>
+                    <textarea class="form-control" id="description" type="text" name="property[description]"
+                        required></textarea>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+
+                    <label for="image" class="form-label">upload images</label>
+                    <input class="form-control" type="file" name="image" id="image" multiple>
+                </div>
+                <button class="btn btn-success">add property</button>
+            </form>
+
+        </div>
+
+    </div>
